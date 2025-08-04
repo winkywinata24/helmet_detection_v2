@@ -45,10 +45,16 @@ def main():
                 continue
 
             # Kirim frame ke YOLO untuk deteksi
-            detection_results = detect_helmet(frame)
+            detection_results, annotated_frame = detect_helmet(frame)
+            
+            # Tampilkan preview kamera dengan hasil deteksi
+            cv2.imshow("Preview Kamera - Deteksi Helm", annotated_frame)
+            
+            # Jika tombol 'q' ditekan, keluar dari loop
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
 
             if detection_results is None:
-                print("Tidak ada deteksi pada frame ini.")
                 continue  # Tidak ada pelanggaran, lanjut loop
 
             # Simpan semua hasil deteksi ke database
@@ -64,20 +70,23 @@ def main():
                 # Update waktu deteksi terakhir
                 last_detected[class_name] = timestamp
                 print("Detection results:", detection_results)
+                
+                with open("detection_log.txt", "a") as log_file:
+                    log_file.write(f"{detection_results}\n")
+
                 insert_detection_result(result)
                 
-                # Kirim notifikasi hanya jika terdeteksi pelanggaran
-                if class_name in VIOLATION_CLASSES:
-                    print("Mengirim Notifikasi: ", result)
-                    send_notification(result)
-                else:
-                    print("Tidak ada pelanggaran terdeteksi:", class_name)
+                # Kirim notifikasi
+                type = "violation" if class_name in VIOLATION_CLASSES else "update"
+                print("Mengirim Notifikasi: ", result)
+                send_notification(result, type)
 
     except KeyboardInterrupt:
         print("\nDeteksi dihentikan secara manual.")
 
     finally:
         cap.release()
+        cv2.destroyAllWindows()
         print("Koneksi kamera ditutup.")
 
 if __name__ == "__main__":
