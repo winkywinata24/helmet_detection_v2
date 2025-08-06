@@ -70,7 +70,7 @@ Sistem ini mendeteksi pelanggaran penggunaan helm menggunakan kamera IP, model Y
 ## ✅ Catatan Tambahan
 1. Aplikasi tetap menerima notifikasi meskipun ditutup atau dihapus dari recent apps.
 2. Notifikasi dikirim via WebSocket dan ditangani oleh foreground service.
-3. Jika ingin mematikan deteksi, tambahkan fitur untuk menghentikan service.
+3. Jika ingin mematikan deteksi, klik tombol exit di kanan atas aplikasi.
 4. Untuk mematikan audio dari kamera, atur volume ke nol:
    player?.volume = 0f
 
