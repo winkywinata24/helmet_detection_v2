@@ -69,5 +69,5 @@ helmet_detection_v2/
 ---
 
 ## ✨ Kontributor
-- **Winky Winata** (Informatics Engineering Student – PCR)  
+- **Winky Augeryan Winata** (Informatics Engineering Student – PCR)  
 - **Ananda, S.Kom., M.T., Ph.D.** (Dosen Pembimbing Proyek Akhir – PCR)  
