@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="4dp"
+    android:background="@drawable/bg_log">
+
+    <TextView android:id="@+id/txtWaktu"
+        android:layout_width="0dp" android:layout_height="wrap_content"
+        android:layout_weight="1" android:fontFamily="@font/lilitaone_regular"
+        android:textColor="@color/darkblue" android:textAlignment="center"
+        android:text="24/08/2024" />
+
+    <TextView android:id="@+id/txtHelm"
+        android:layout_width="0dp" android:layout_height="match_parent"
+        android:layout_weight="1" android:fontFamily="@font/lilitaone_regular"
+        android:textColor="@color/darkblue" android:textAlignment="center"
+        android:background="@drawable/bg_true" android:text="TRUE"
+        android:layout_marginRight="1dp" android:gravity="center" />
+
+    <TextView android:id="@+id/txtStrap"
+        android:layout_width="0dp" android:layout_height="match_parent"
+        android:layout_weight="1" android:fontFamily="@font/lilitaone_regular"
+        android:textColor="@color/darkblue" android:textAlignment="center"
+        android:background="@drawable/bg_false" android:text="FALSE"
+        android:layout_marginLeft="1dp" android:gravity="center" />
+</LinearLayout>

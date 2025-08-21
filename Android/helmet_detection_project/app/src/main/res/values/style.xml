@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BottomNavigationActive">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/lilitaone_regular</item>
+    </style>
+
+    <style name="BottomNavigationInactive">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/lilitaone_regular</item>
+    </style>
+
+    <style name="ToolbarTitle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:fontFamily">@font/lilitaone_regular</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+</resources>
